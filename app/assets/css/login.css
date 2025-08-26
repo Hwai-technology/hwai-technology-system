@@ -1,0 +1,215 @@
+/* ===========================
+   تصميم صفحة تسجيل دخول لمطعم - نسخة مسطحة وأنيقة
+   =========================== */
+
+/* الخلفية */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff7f50, #ff6347, #ffd700);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* صور للطعام في الخلفية */
+.login-container::before,
+.login-container::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+}
+
+/* صورة همبرغر كبيرة أعلى من اليمن */
+.login-container::before {
+  top: 1rem;
+  right: 2rem;
+  width: 120px;
+  height: 120px;
+  background-image: url("/assets/images/hamburger.png"); /* ضع مسار الصورة هنا */
+  transform: rotate(-15deg);
+  z-index: 2;
+}
+
+/* صورة كعكة صغيرة أسفل من اليسار */
+.login-container::after {
+  bottom: -2.7rem;
+  left: 1rem;
+  width: 180px;
+  height: 180px;
+  background-image: url("/assets/images/pizza.webp"); /* ضع مسار الصورة هنا */
+  transform: rotate(10deg);
+  z-index: 2;
+}
+
+/* بطاقة تسجيل الدخول */
+.login-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* العنوان */
+.login-card h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff7e6;
+  margin-bottom: 1rem;
+}
+
+/* الحقول */
+.input-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #fff5e6;
+  font-size: 0.95rem;
+}
+
+.input-group input {
+  width: -webkit-fill-available;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.85);
+  color: #1e293b;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #ff6347;
+  background: #fff;
+}
+
+/* الزر */
+button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(90deg, #ff6347, #ff4500);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+/* الفوتر */
+.footer-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 247, 230, 0.9);
+}
+
+.footer-text a {
+  color: rgb(249, 254, 198);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* أنيميشن الخلفية */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* أنيميشن البطاقة */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* تحسين التوافق مع الجوال */
+@media (max-width: 500px) {
+  .login-card {
+    padding: 1.5rem;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    z-index: 1;
+  }
+  .login-card h1 {
+    font-size: 1.6rem;
+  }
+  .input-group input {
+    padding: 0.65rem 0.9rem;
+  }
+  button {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+.version {
+  font-size: 0.8rem;
+  color: rgba(255, 247, 230, 0.9);
+  margin-top: 1rem;
+  text-align: end;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.logo {
+  width: 100%; /* يتمدد مع الحاوية */
+  height: auto; /* يحافظ على التناسب */
+  min-width: 300px; /* لا يتجاوز الحجم الأصلي */
+  display: block; /* يمنع فراغ أسفل الصورة */
+  color: white; /* اللوجو يصير أبيض */
+  /*filter: brightness(0) invert(1);*/
+}
+
+.input-error {
+  border-color: red;
+}
+.error-msg {
+  color: rgb(249, 254, 198);
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+  display: block;
+}

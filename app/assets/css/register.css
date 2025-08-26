@@ -1,0 +1,176 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  background: linear-gradient(135deg, #ff7f50, #ff6347, #ffd700);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+  width: 100%;
+}
+
+.register-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.register-card h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff7e6;
+  margin-bottom: 1.5rem;
+}
+
+/* شبكة الأعمدة */
+.register-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 1.5rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #fff5e6;
+  font-size: 0.95rem;
+}
+
+.vue-tel-input {
+  width: -webkit-fill-available;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+
+.vue-tel-input input.vti__input.vti__phone {
+  box-sizing: border-box;
+  background-color: transparent !important;
+  background: transparent;
+}
+
+.input-group input,
+.input-group select {
+  width: -webkit-fill-available;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #1e293b;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #ff6347;
+  background: #fff;
+}
+
+.form-footer {
+  grid-column: span 2;
+  /* دايمًا بعرض العمودين */
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(90deg, #ff6347, #ff4500);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+.footer-text {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 247, 230, 0.9);
+}
+
+.footer-text a {
+  color: rgb(249, 254, 198);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* أنيميشن */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* موبايل: عمود واحد */
+@media (max-width: 700px) {
+  .register-card {
+    padding: 1rem;
+    border: none;
+    background-color: transparent;
+  }
+
+  .register-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-footer {
+    grid-column: span 1;
+  }
+}
+
+.logo {
+  width: 290px;
+  height: auto;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+
+.error-msg {
+  color: rgb(249, 254, 198);
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+  display: block;
+}
