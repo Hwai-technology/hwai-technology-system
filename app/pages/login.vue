@@ -2,15 +2,7 @@
 <template>
   <div class="login-container">
     <div class="login-card">
-      <img
-        src="/logo3.png"
-        alt="Logo"
-        width="300"
-        class="logo"
-        preload
-        format="png"
-        fetchpriority="high"
-      />
+      <img src="/logo3.png" alt="Logo" width="300" class="logo" preload format="png" fetchpriority="high" />
 
       <h1>Welcome Back</h1>
 
@@ -18,26 +10,16 @@
         <!-- Email -->
         <div class="input-group">
           <label>Email</label>
-          <input
-            v-model="email"
-            type="email"
-            placeholder="Enter your email"
-            :class="{ 'input-error': errors.email }"
-            autocomplete="email"
-          />
+          <input v-model="email" type="email" placeholder="Enter your email" :class="{ 'input-error': errors.email }"
+            autocomplete="email" />
           <span v-if="errors.email" class="error-msg">{{ errors.email }}</span>
         </div>
 
         <!-- Password -->
         <div class="input-group">
           <label>Password</label>
-          <input
-            v-model="password"
-            type="password"
-            placeholder="Enter your password"
-            :class="{ 'input-error': errors.password }"
-            autocomplete="current-password"
-          />
+          <input v-model="password" type="password" placeholder="Enter your password"
+            :class="{ 'input-error': errors.password }" autocomplete="current-password" />
           <span v-if="errors.password" class="error-msg">{{
             errors.password
           }}</span>
