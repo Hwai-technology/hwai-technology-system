@@ -113,11 +113,6 @@ export default defineNuxtConfig({
         },
       },
     },
-    prerender: {
-      // prerender its for set static pages as html not in ssr
-      crawlLinks: true, // السماح بالزحف على الروابط
-      //routes: ["/", "/about", "/contact"], // تحديد المسارات للبري رندر
-    },
   },
   // ------------------------------
   // Compatibility and devtools
